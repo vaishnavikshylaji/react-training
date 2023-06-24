@@ -12,7 +12,6 @@ function InputForm({ listed, setListed }) {
   };
 
   const addToList = () => {
-    console.log(listed);
     let updatedList = [...listed];
     updatedList = [...listed, data];
     setListed(updatedList);
@@ -23,6 +22,7 @@ function InputForm({ listed, setListed }) {
       <form>
         <InputGroup className="m-3">
           <Form.Control
+            // aria-invalid={errors.firstName ? "true" : "false"}
             placeholder="Item name"
             aria-label="Item name"
             aria-describedby="basic-addon2"
@@ -30,11 +30,16 @@ function InputForm({ listed, setListed }) {
             value={data}
           />
           <InputGroup.Text id="basic-addon2">
-            <Button type={"button"} onClick={addToList}>
+            <Button type={"button"} onClick={() => addToList}>
               Add to list
             </Button>
           </InputGroup.Text>
         </InputGroup>
+        {/* {errors.firstName?.type === "required" && (
+          <p role="alert" className="m-3 text-danger">
+            This field is required
+          </p>
+        )} */}
       </form>
     </>
   );

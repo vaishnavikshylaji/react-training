@@ -7,7 +7,7 @@ function Completed({ checked, setChecked, listed, setListed }) {
     let updatedListedList = [...checked];
 
     if (event.target.checked) {
-    //   updatedList = [...listed, event.target.value];
+      updatedList = [...listed, event.target.value];
       updatedListedList.splice(index, 1);
     }
 
@@ -17,14 +17,20 @@ function Completed({ checked, setChecked, listed, setListed }) {
 
   return (
     <>
-      {checked.length > 0 && (
-        <Card>
-          <Card.Header>Completed List</Card.Header>
-          <Card.Body>
-            {/* <table class="table table-bordered"> */}
+      <Card>
+        <Card.Header>Completed List</Card.Header>
+      </Card>
+      <Card.Body>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+            </tr>
+          </thead>
+          <tbody>
             {checked.map((data, index) => (
               <tr>
-                <td>
+                <th scope="row">
                   <ListGroup.Item as="li">
                     <input
                       value={data}
@@ -34,13 +40,13 @@ function Completed({ checked, setChecked, listed, setListed }) {
                     />
                     {data}
                   </ListGroup.Item>
-                </td>
+                </th>
               </tr>
             ))}
-            {/* </table> */}
-          </Card.Body>
-        </Card>
-      )}
+          </tbody>
+        </table>
+      </Card.Body>
+      <div className="list-container"></div>
     </>
   );
 }

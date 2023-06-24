@@ -1,12 +1,13 @@
 import Footer from "../partials/Footer";
 import Header from "../partials/Navbar";
 import { useState } from "react";
+import Button from "react-bootstrap/Button";
 import ListedData from "./ListedData";
 import InputForm from "./InputForm";
 import Completed from "./Completed";
 function Home() {
   const [listed, setListed] = useState([]);
-  const [checked, setChecked] = useState([]);
+  var [checked, setChecked] = useState([]);
 
   return (
     <>

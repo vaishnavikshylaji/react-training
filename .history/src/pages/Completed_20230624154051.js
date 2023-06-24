@@ -7,7 +7,7 @@ function Completed({ checked, setChecked, listed, setListed }) {
     let updatedListedList = [...checked];
 
     if (event.target.checked) {
-    //   updatedList = [...listed, event.target.value];
+      updatedList = [...listed, event.target.value];
       updatedListedList.splice(index, 1);
     }
 
@@ -17,11 +17,11 @@ function Completed({ checked, setChecked, listed, setListed }) {
 
   return (
     <>
-      {checked.length > 0 && (
-        <Card>
-          <Card.Header>Completed List</Card.Header>
-          <Card.Body>
-            {/* <table class="table table-bordered"> */}
+      <Card>
+        <Card.Header>Completed List</Card.Header>
+
+        <Card.Body>
+          <table class="table">
             {checked.map((data, index) => (
               <tr>
                 <td>
@@ -37,10 +37,9 @@ function Completed({ checked, setChecked, listed, setListed }) {
                 </td>
               </tr>
             ))}
-            {/* </table> */}
-          </Card.Body>
-        </Card>
-      )}
+          </table>
+        </Card.Body>
+      </Card>
     </>
   );
 }

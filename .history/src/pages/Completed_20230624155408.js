@@ -7,7 +7,7 @@ function Completed({ checked, setChecked, listed, setListed }) {
     let updatedListedList = [...checked];
 
     if (event.target.checked) {
-    //   updatedList = [...listed, event.target.value];
+      updatedList = [...listed, event.target.value];
       updatedListedList.splice(index, 1);
     }
 

@@ -6,7 +6,7 @@ import InputForm from "./InputForm";
 import Completed from "./Completed";
 function Home() {
   const [listed, setListed] = useState([]);
-  const [checked, setChecked] = useState([]);
+  var [checked, setChecked] = useState([]);
 
   return (
     <>

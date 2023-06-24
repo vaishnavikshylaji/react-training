@@ -35,6 +35,11 @@ function InputForm({ listed, setListed }) {
             </Button>
           </InputGroup.Text>
         </InputGroup>
+        {/* {errors.firstName?.type === "required" && (
+          <p role="alert" className="m-3 text-danger">
+            This field is required
+          </p>
+        )} */}
       </form>
     </>
   );

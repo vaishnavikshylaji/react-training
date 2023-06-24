@@ -8,7 +8,7 @@ function ListedData({ listed, setListed, checked, setChecked }) {
 
     if (event.target.checked) {
       updatedList = [...checked, event.target.value];
-    //   updatedListedList.splice(index, 1);
+      updatedListedList.splice(index, 1);
     }
 
     setChecked(updatedList);
