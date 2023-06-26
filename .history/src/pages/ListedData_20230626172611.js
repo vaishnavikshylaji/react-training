@@ -8,13 +8,10 @@ function ListedData({ listed, setListed, checked, setChecked }) {
 
     if (event.target.checked) {
       if (!updatedList.includes(index)) {
-        updatedList.push(event.target.value);
+        updatedList.push(index);
       }
     } else {
-      const valueIndex = updatedList.indexOf(event.target.value);
-      if (valueIndex !== -1) {
-        updatedList.splice(valueIndex, 1);
-      }
+      updatedList = updatedList.filter((item) => item !== index);
     }
 
     setChecked(updatedList);
